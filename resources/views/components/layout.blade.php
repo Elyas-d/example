@@ -98,7 +98,7 @@
             <h1 class="text-3xl font-bold tracking-tight text-grey-900">{{ $heading }}</h1>
         </div>
     </header>
-    <main>
+    <main class="pb-10">
         {{ $slot }}
     </main>
 </body>
