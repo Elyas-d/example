@@ -33,6 +33,11 @@ Route::prefix('jobs')->group(function () {
         return view('jobs.show', ['job' => $job]);
     });
 
+    Route::get('/{id}/edit', function ($id) { 
+        $job = Job::findOrFail($id); 
+        return view('jobs.edit', ['job' => $job]);
+    });
+
     Route::post('/', function () {
         
         request()->validate([
@@ -45,6 +50,35 @@ Route::prefix('jobs')->group(function () {
             'salary'=> request('salary'),
             'employer_id'=> 1
         ]);
-        return redirect('/jobs');
+        return redirect('/jobs');        
     });
+
+    Route::patch('/{id}', function ($id) {
+        request()->validate([
+            'title'=> ['required', 'min:3'],
+            'salary'=> ['required']
+        ]);
+
+        $job=Job::findOrFail($id);
+
+        // $job->title = request('title');
+        // $job->salary = request('salary');
+
+        $job->update([
+            'title'=> request('title'),
+            'salary'=> request('salary')
+        ]);
+        $job->save();
+
+        //authorize
+        return redirect('/jobs/'. $job->id);
+    });
+
+    Route::delete('/{id}', function ($id) { 
+        //authorize
+        Job::findOrFail($id)->delete();
+        return redirect('/jobs');
+
+    });
+
 });

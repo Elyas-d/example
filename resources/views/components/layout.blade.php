@@ -97,11 +97,11 @@
         <div class="mx-auto max-w-7xl px-4 py-6 sm: px-6 lg: py-8 sm:flex sm:justify-between">
             <h1 class="text-3xl font-bold tracking-tight text-grey-900">{{ $heading }}</h1>
             @if (request()->is('jobs'))
-                <x-button href="/jobs/create">Create Job</x-button>
+                <x-button href="/jobs/create" class="justify-right">Create Job</x-button>
             @endif
         </div>
     </header>
-    <main class="pb-10">
+    <main class="pb-10 bg-slate-200 w-full max-w-100 max-h-max">
         {{ $slot }}
     </main>
 </body>
