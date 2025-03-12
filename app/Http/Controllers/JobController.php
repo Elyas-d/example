@@ -53,11 +53,6 @@ class JobController extends Controller
             'salary'=> ['required']
         ]);
     
-        // $job=Job::findOrFail($id);
-    
-        // $job->title = request('title');
-        // $job->salary = request('salary');
-    
         $job->update([
             'title'=> request('title'),
             'salary'=> request('salary')
