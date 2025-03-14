@@ -1,21 +1,18 @@
 <x-layout>
     <x-slot:heading>
-        Create Job
+        Register
     </x-slot:heading>
     <div class="bg-gray-100 flex items-center justify-center min-h-screen">
         <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Job Details Form</h2>
             <form method="POST" action="/jobs" class="space-y-6">
                 @csrf
-                <!-- Job Title Field -->
                 <div>
-                    <x-form_label for="title">Job Title</x-form_label>
+                    <x-form_label for="title">username</x-form_label>
                     <x-form_input placeholder="CEO" required></x-form_input>
                 </div>
-                <x-form_error name="title"></x-form_error>
-                <!-- Salary Field -->
+                <x-form_error name="username"></x-form_error>
                 <div>
-                    <x-form_label for="salary" class="block text-sm font-medium text-gray-700">Salary</x-form_label>
+                    <x-form_label for="salary" class="block text-sm font-medium text-gray-700">password</x-form_label>
                     <x-form_input type="number" id="salary" name="salary" placeholder="500,000 USD"
                         class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required/>
                 </div>
