@@ -57,8 +57,14 @@
                 <div class="flex justify-end">
                     @guest
                         <x-nav-link href="/login" :active="request()->is('login')">Login</x-nav-link>
-                    <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
+                        <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
                     @endguest
+
+                    @auth
+                        <form method="POST" action="/logout">
+                            <x-form_button>logout</x-form_button>
+                        </form>
+                    @endauth
                 </div>
             </div>
         </div>

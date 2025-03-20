@@ -8,13 +8,13 @@
                 @csrf
                 <div>
                     <x-form_label for="First_Name">First Name</x-form_label>
-                    <x-form_input placeholder="First_Name" id="First_Name" required></x-form_input>
+                    <x-form_input placeholder="First_Name" id="First_Name" name="First_Name" required></x-form_input>
                 </div>
                 <x-form_error name="Last_Name"></x-form_error>
 
                 <div>
                     <x-form_label for="Last_Name">Last Name</x-form_label>
-                    <x-form_input placeholder="Last_Name" id="Last_Name" required></x-form_input>
+                    <x-form_input placeholder="Last_Name" name="Last_Name" id="Last_Name" required></x-form_input>
                 </div>
                 <x-form_error name="Last_Name"></x-form_error>
 
@@ -29,13 +29,13 @@
 
                 <div>
                     <x-form_label for="password">Password</x-form_label>
-                    <x-form_input type="password" placeholder="password" required></x-form_input>
+                    <x-form_input type="password" name="password" placeholder="password" required></x-form_input>
                 </div>
                 <x-form_error name="password"></x-form_error>
 
                 <div>
                     <x-form_label for="password_confirmation">Confirm Password</x-form_label>
-                    <x-form_input type="password" placeholder="re-enter your password" required></x-form_input>
+                    <x-form_input type="password" name="password_confirmation" placeholder="re-enter your password" required></x-form_input>
                 </div>
                 <x-form_error name="password_confirmation"></x-form_error>
 
