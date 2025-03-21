@@ -8,13 +8,13 @@
                 @csrf
                 <div>
                     <x-form_label for="email">Email</x-form_label>
-                    <x-form_input placeholder="example@gmail.com" id="email" required></x-form_input>
+                    <x-form_input placeholder="example@gmail.com" name="email" id="email" :value="old('email')" required></x-form_input>
                 </div>
-                <x-form_error name="Username"></x-form_error>
+                <x-form_error name="email"></x-form_error>
 
                 <div>
                     <x-form_label for="password">Password</x-form_label>
-                    <x-form_input type="password" placeholder="password" required></x-form_input>
+                    <x-form_input type="password" name="password" placeholder="password" :value="old('password')" required></x-form_input>
                 </div>
                 <x-form_error name="password"></x-form_error>
 

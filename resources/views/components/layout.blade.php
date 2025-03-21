@@ -62,7 +62,8 @@
 
                     @auth
                         <form method="POST" action="/logout">
-                            <x-form_button>logout</x-form_button>
+                            @csrf
+                            <x-form_button class="bg-slate-800 hover:bg-gray-600">logout</x-form_button>
                         </form>
                     @endauth
                 </div>
