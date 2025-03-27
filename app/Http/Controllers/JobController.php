@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Job;
+use Illuminate\Support\Facades\Gate;
 
 class JobController extends Controller
 {
@@ -43,6 +47,8 @@ class JobController extends Controller
 
     public function edit(Job $job)
     {
+        Auth::user()->can('edit-job', $job);
+
         return view('jobs.edit',['job'=> $job]);
     }
 
