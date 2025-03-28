@@ -3,9 +3,15 @@
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
+use App\Mail\JobPosted;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
+
+Route::get('/test', function(){
+    return 'done';
+});
 
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
